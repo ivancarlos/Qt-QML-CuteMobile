@@ -38,3 +38,5 @@
 build
 build-android-armeabi-v7a
 build-android-arm64
+armeabi-v7a
+build-android-arm64-v8a

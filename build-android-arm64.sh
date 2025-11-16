@@ -7,7 +7,7 @@ NDK=26.2.11394342
 ANDROID_ABI=arm64-v8a
 ANDROID_PLATFORM=android-33
 
-android-platform-manager.sh profile-load Qt-QML-CuteMobile
+#android-platform-manager.sh profile-load Qt-QML-CuteMobile
 
 # === Qt ${QT_VERSION} (ajuste se o caminho for outro) ===
 export QT_BASE_DIR="${HOME}/qt"
