@@ -15,8 +15,8 @@ export JAVA_HOME="$(jenv javahome)"
 export PATH="$QT_DESKTOP_DIR/bin:$PATH"
 
 
-cmake -S . -B build_android && cd build_android || exit
-#cmake --build . --parallel
+cmake -S . -B build && cd build || exit
+cmake --build . --parallel
 
 exit 0
 
