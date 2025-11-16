@@ -7,7 +7,7 @@ NDK=26.2.11394342
 ANDROID_ABI=armeabi-v7a
 ANDROID_PLATFORM=android-33
 
-android-platform-manager.sh profile-load  Qt-QML-CuteMobile
+#android-platform-manager.sh profile-load  Qt-QML-CuteMobile
 
 # === Qt ${QT_VERSION} (ajuste se o caminho for outro) ===
 export QT_BASE_DIR="${HOME}/qt"
@@ -42,7 +42,7 @@ cd "${BUILD_DIR}"
 # Usa o qt-cmake do Qt Android
 qt-cmake .. \
     -DQT_HOST_PATH="${QT_HOST_PATH}" \
-    -DANDROID_ABI=${ANDROID_ABI}
+    -DANDROID_ABI=${ANDROID_ABI} \
     -DANDROID_PLATFORM=${ANDROID_PLATFORM}
 
     # -DQT_ANDROID_COMPILE_SDK_VERSION=33 \

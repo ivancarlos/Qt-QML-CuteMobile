@@ -36,5 +36,5 @@
 
 # Final Output
 build
-
+build-android-armeabi-v7a
 build-android-arm64
