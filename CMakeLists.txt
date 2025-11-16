@@ -1,9 +1,9 @@
 # -------------------- PROJECT TEMPLATE INFO ---------------------------------------------
 #   Title   :                       CuteMobile
-#   Version :                       1.0.6
-#   Author  :                       Kambiz Asadzadeh
-#   Url     :                       https://github.com/KambizAsadzadeh/CuteMobile
-#   Organization  :                 The Genyleap [Kambiz Asadzadeh]
+#   Version :                       1.0.7
+#   Author  :                       Ivan Lopes
+#   Url     :                       https://github.com/ivancarlos/CuteMobile
+#   Organization  :                 UERJ [Ivan Lopes]
 # ----------------------------------------------------------------------------------------
 
 cmake_minimum_required(VERSION 3.23)
@@ -37,7 +37,7 @@ if(NOT DEFINED CMAKE_CXX_STANDARD)
     set(CMAKE_CXX_EXTENSIONS ON)
 endif()
 
-set(PROJECT_CREATOR "Kambiz Asadzadeh" CACHE STRING "Creator of your project.") #Your project creator.
+set(PROJECT_CREATOR "Ivan Lopes" CACHE STRING "Creator of your project.") #Your project creator.
 
 set(PROJECT_LICENSE_TYPE "MIT" CACHE STRING "Project License Type.") #Your project license type.
 
