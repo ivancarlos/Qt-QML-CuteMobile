@@ -8,7 +8,9 @@ export QT_ANDROID_ARMV7_DIR="${HOME}/qt/6.5.3/android_armv7"
 
 export ANDROID_SDK_ROOT="${HOME}/Android/Sdk"
 export ANDROID_HOME="${HOME}/Android/Sdk"
-export ANDROID_NDK_ROOT="${HOME}/Android/Sdk/ndk/android-r11c-standalone-toolchain"
+
+#export ANDROID_NDK_ROOT="${HOME}/Android/Sdk/ndk/26.2.11394342"
+export ANDROID_NDK_ROOT="${HOME}/Android/Sdk/ndk/android-ndk-r20b"
 
 export JENV_VERSION=openjdk64-22.0.2
 export JAVA_HOME="$(jenv javahome)"

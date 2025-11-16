@@ -8,15 +8,24 @@ export QT_ANDROID_ARMV7_DIR="${HOME}/qt/6.5.3/android_armv7"
 
 export ANDROID_SDK_ROOT="${HOME}/Android/Sdk"
 export ANDROID_HOME="${HOME}/Android/Sdk"
-export ANDROID_NDK_ROOT="${HOME}/Android/Sdk/ndk/android-r11c-standalone-toolchain"
+export ANDROID_NDK_ROOT="${HOME}/Android/Sdk/ndk/26.2.11394342"
+#export ANDROID_NDK_ROOT="${HOME}/Android/Sdk/ndk/android-ndk-r20b"
 
 export JENV_VERSION=openjdk64-22.0.2
 export JAVA_HOME="$(jenv javahome)"
 export PATH="$QT_DESKTOP_DIR/bin:$PATH"
 
 
-cmake -S . -B build_android && cd build_android || exit
-cmake --build . --target apk
+BUILD_DIR=android_arm64_v8a
+${HOME}/qt/6.5.3/${BUILD_DIR}/bin/qt-cmake\
+    -S . \
+    -B ${BUILD_DIR} && \
+    cd ${BUILD_DIR} || \
+    exit
+
+${HOME}/qt/6.5.3/${BUILD_DIR}/bin/qt-cmake\
+    --build . \
+    --target android-apk
 
 exit 0
 
