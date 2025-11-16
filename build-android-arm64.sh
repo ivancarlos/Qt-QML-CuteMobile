@@ -4,7 +4,10 @@ set -e
 QT_VERSION=6.5.3
 JENV_VERSION=openjdk64-17.0.16
 NDK=26.2.11394342
-android-platform-manager.sh profile-load  Qt-QML-CuteMobile
+ANDROID_ABI=arm64-v8a
+ANDROID_PLATFORM=android-33
+
+android-platform-manager.sh profile-load Qt-QML-CuteMobile
 
 # === Qt ${QT_VERSION} (ajuste se o caminho for outro) ===
 export QT_BASE_DIR="${HOME}/qt"
@@ -31,7 +34,7 @@ export PATH="${QT_ANDROID_DIR}/bin:${QT_HOST_DIR}/bin:${PATH}"
 # Muito importante para Qt cross-compiled:
 export QT_HOST_PATH="${QT_HOST_DIR}"
 
-BUILD_DIR="build-android-arm64"
+BUILD_DIR="build-android-${ANDROID_ABI}"
 rm -rf "${BUILD_DIR}"
 cmake -E make_directory "${BUILD_DIR}"
 cd "${BUILD_DIR}"
@@ -39,8 +42,8 @@ cd "${BUILD_DIR}"
 # Usa o qt-cmake do Qt Android
 qt-cmake .. \
     -DQT_HOST_PATH="${QT_HOST_PATH}" \
-    -DANDROID_ABI=arm64-v8a \
-    -DANDROID_PLATFORM=android-33
+    -DANDROID_ABI=${ANDROID_ABI}
+    -DANDROID_PLATFORM=${ANDROID_PLATFORM}
     # -DQT_ANDROID_COMPILE_SDK_VERSION=33 \
     # -DQT_ANDROID_MIN_SDK_VERSION=21 \
     # -DQT_ANDROID_TARGET_SDK_VERSION=33
@@ -52,13 +55,7 @@ qt-cmake .. \
 #     QT_ANDROID_MIN_SDK_VERSION
 #     QT_ANDROID_TARGET_SDK_VERSION
 
-
-
 # Compila
 cmake --build .
 
-# (Opcional) ver os targets de APK
-#echo
-#echo "Targets com APK:"
-#cmake --build . --target help | grep -i apk || true
-
+exit 0
