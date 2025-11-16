@@ -35,6 +35,6 @@
 .DS_Store
 
 # Final Output
-build/ProjectTemplate
-build_android/
-build_linux/
+build
+
+build-android-arm64
